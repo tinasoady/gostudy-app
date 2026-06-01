@@ -1,5 +1,11 @@
 ﻿import 'package:flutter/material.dart';
 
+import 'pages/home/home_screen.dart';
+import 'pages/publish/publish_screen.dart';
+import 'pages/profile/profile_screen.dart';
+import 'pages/notifications/notifications_screen.dart';
+import 'pages/trips/trips_screen.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -23,7 +29,7 @@ class MyApp extends StatelessWidget {
       routes: {
         '/': (_) => const LoginPage(),
         '/home': (_) => const HomePage(),
-        '/notifications': (_) => const NotificationsPage(),
+        '/notifications': (_) => const NotificationsScreenWidget(),
       },
       initialRoute: '/',
     );
@@ -185,9 +191,9 @@ class _HomePageState extends State<HomePage> {
   int _selectedIndex = 0;
 
   static const List<Widget> _pages = [
-    HomeTab(),
-    PublishTab(),
-    ProfileTab(),
+    const HomeScreenWidget(),
+    const PublishScreenWidget(),
+    const ProfileScreenWidget(),
   ];
 
   void _onItemTapped(int index) {
